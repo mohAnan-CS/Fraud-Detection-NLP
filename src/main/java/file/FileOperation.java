@@ -1,5 +1,6 @@
 package file;
 
+import birzeit.university.plagiarismdetection.Runner;
 import ngram.Model;
 
 import java.io.File;
@@ -9,8 +10,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class FileOperation {
-
-    public static Map<String, Model> languageModelHashMap = new HashMap<>();
 
     public static void readLanguageModelFile(String path){
 
@@ -30,12 +29,12 @@ public class FileOperation {
                 int count = Integer.parseInt(splitLine[2]);
                 float probability = Float.parseFloat(splitLine[3]);
                 Model model = new Model(word, gram, count,probability);
-                languageModelHashMap.put(word, model);
+                Runner.LANGUAGE_MODEL_HASH_MAP.put(word, model);
 
             }
 
             scanner.close();
-            printHashTable(languageModelHashMap);
+            //printHashTable(languageModelHashMap);
 
         }catch (FileNotFoundException e) {
 

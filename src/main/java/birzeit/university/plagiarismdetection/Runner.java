@@ -1,19 +1,36 @@
 package birzeit.university.plagiarismdetection;
 
+import file.FileOperation;
+import ngram.Model;
 import tokenizer.ArabicTokenizer;
 import validating.Normalization;
 import validating.StopWordRemover;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Runner {
 
+    public static HashMap<String , Model> LANGUAGE_MODEL_HASH_MAP = new HashMap<>();
+
     public static void main(String[] args) {
+
         StopWordRemover.readStopWordsFromCSV("stopwords");
+        FileOperation.readLanguageModelFile("language_model.csv");
         String sentence = "محمد عنان أبو جزر . في جامعة بير زيت";
         String[] split = splitSentences(sentence);
-        validateCorpus(split);
+        ArrayList<String> arrayListValidateCorpus = validateCorpus(split);
+
+
+    }
+
+    public static void prepareCorpusIntoGram(ArrayList<String> arrayListValidate){
+
+        for (int i = 0; i < arrayListValidate.size(); i++) {
+            String[] split = arrayListValidate.get(i).split(" ");
+
+        }
 
     }
 
