@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import validating.ValidateCorpus;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,15 +19,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-
-        ValidateCorpus validateCorpus = new ValidateCorpus();
-        String sentence = validateCorpus.validate("محمد عنان أبو . جزر");
-        HelloController helloController = new HelloController();
-        ArrayList<String> arrayList = helloController.tokenizeWord(sentence.trim());
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (!arrayList.get(i).trim().equalsIgnoreCase(""))
-                System.out.println(arrayList.get(i).trim());
-        }
         launch();
     }
+
 }

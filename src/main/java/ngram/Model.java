@@ -7,6 +7,13 @@ public class Model {
     private int count;
     private float probabilities;
 
+    public Model(String word, int gram, int count, float probabilities) {
+        this.word = word;
+        this.gram = gram;
+        this.count = count;
+        this.probabilities = probabilities;
+    }
+
     public String getWord() {
         return word;
     }

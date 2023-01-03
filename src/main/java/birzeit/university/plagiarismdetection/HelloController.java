@@ -18,7 +18,6 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
-        
     }
 
     public  ArrayList<String> tokenizeWord(String sentence){
