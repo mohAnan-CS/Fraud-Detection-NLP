@@ -2,6 +2,7 @@ package birzeit.university.plagiarismdetection;
 
 import file.FileOperation;
 import ngram.Model;
+import ngram.Probabilities;
 import tokenizer.ArabicTokenizer;
 import validating.Normalization;
 import validating.StopWordRemover;
@@ -18,18 +19,24 @@ public class Runner {
 
         StopWordRemover.readStopWordsFromCSV("stopwords");
         FileOperation.readLanguageModelFile("language_model.csv");
-        String sentence = "محمد عنان أبو جزر . في جامعة بير زيت";
+        String sentence = "محمد عنان ابو منها غاز جزر.وينتج  بركات عناني جرار الاوكسجين . وينتج منها غاز الايثيلين .دمه واللي حلو بتفانيه";
         String[] split = splitSentences(sentence);
         ArrayList<String> arrayListValidateCorpus = validateCorpus(split);
+        prepareCorpusIntoGram(arrayListValidateCorpus);
 
 
     }
 
     public static void prepareCorpusIntoGram(ArrayList<String> arrayListValidate){
 
-        for (int i = 0; i < arrayListValidate.size(); i++) {
-            String[] split = arrayListValidate.get(i).split(" ");
 
+        for (String s : arrayListValidate) {
+            String[] wordSplit = s.split(" ");
+            Probabilities.getAllProbabilities(wordSplit);
+            float score = Probabilities.calculatePlagiarismScore();
+            Probabilities.PROBABILITIES_ARRAY_LIST.clear();
+            System.out.println("Score = " + score);
+            System.out.println("----------------");
         }
 
     }
