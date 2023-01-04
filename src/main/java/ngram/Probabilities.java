@@ -1,26 +1,33 @@
 package ngram;
 
 import birzeit.university.plagiarismdetection.Runner;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class Probabilities {
 
     public static ArrayList<Model> PROBABILITIES_ARRAY_LIST = new ArrayList<>();
 
-    public static float calculatePlagiarismScore(){
+    public static String calculatePlagiarismScore(){
 
-        float sumProbability = 0 ;
+        float sumProbability = 1 ;
         int numberOfGram = PROBABILITIES_ARRAY_LIST.size();
-        System.out.println("Number of gram = " + numberOfGram);
 
         for (Model model : PROBABILITIES_ARRAY_LIST) {
-            if (model.getGram() != 1) {
-                System.out.println(model);
-                sumProbability += model.getProbabilities();
-            }
+            System.out.println(model);
+            sumProbability += model.getProbabilities();
         }
 
-        return sumProbability;
+        float result = ( ( sumProbability/numberOfGram ) * 100 ) * 2 ;
+
+        if (result < 100) {
+            return String.format("%.2f", result);
+        }
+        else {
+            return "100";
+        }
 
     }
 
@@ -133,7 +140,7 @@ public class Probabilities {
             Model model = Runner.LANGUAGE_MODEL_HASH_MAP.get(sentence.trim());
             PROBABILITIES_ARRAY_LIST.add(model);
 
-        } else {
+        }else {
 
             Model model = new Model("" , 0, 0, 0);
             PROBABILITIES_ARRAY_LIST.add(model);

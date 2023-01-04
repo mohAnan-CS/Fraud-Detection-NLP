@@ -19,7 +19,7 @@ public class Runner {
 
         StopWordRemover.readStopWordsFromCSV("stopwords");
         FileOperation.readLanguageModelFile("language_model.csv");
-        String sentence = "محمد عنان ابو منها غاز جزر.وينتج  بركات عناني جرار الاوكسجين . وينتج منها غاز الايثيلين .دمه واللي حلو بتفانيه";
+        String sentence = "محمد عنان ابو منها غاز جزر.وينتج  بركات عناني جرار الاوكسجين . وينتج منها غاز الايثيلين .دمه واللي حلو بتفانيه محمد عنان ابو جزر في جامعة بير زيت يدرس علم الحاسوب عبادة الجرس في كلية الاي تي وكان يمارس الرياضة وسط الكلية والجكيع مذهول منه. السعوديين حلوين اللي حلو وجهه وشكله واللي حلو اخلاقه واللي حلو خفه دمه واللي حلو بتفانيه وعمله وخدمه مجتمعه ووطنه . سكون شداد فتحخي كخيه حخحسبي . اعوام وكان بالنسبه نافذه مطله العالم اوصل الخبر مباشر بدون واسطه صحيفه او قناه واوصل صوتنا للناس اوصل اصوات الناس الينا تشرفت بمعرفه الكثير الاصدقاء مختلف بلاد العالم خلاله.محمد عنان ابو";
         String[] split = splitSentences(sentence);
         ArrayList<String> arrayListValidateCorpus = validateCorpus(split);
         prepareCorpusIntoGram(arrayListValidateCorpus);
@@ -33,9 +33,9 @@ public class Runner {
         for (String s : arrayListValidate) {
             String[] wordSplit = s.split(" ");
             Probabilities.getAllProbabilities(wordSplit);
-            float score = Probabilities.calculatePlagiarismScore();
+            String score = Probabilities.calculatePlagiarismScore();
             Probabilities.PROBABILITIES_ARRAY_LIST.clear();
-            System.out.println("Score = " + score);
+            System.out.println("Score = " + score + "%");
             System.out.println("----------------");
         }
 
