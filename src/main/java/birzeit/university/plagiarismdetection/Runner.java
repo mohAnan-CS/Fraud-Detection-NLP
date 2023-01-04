@@ -24,11 +24,11 @@ public class Runner {
         ArrayList<String> arrayListValidateCorpus = validateCorpus(split);
         prepareCorpusIntoGram(arrayListValidateCorpus);
 
-
     }
 
-    public static void prepareCorpusIntoGram(ArrayList<String> arrayListValidate){
+    public static ArrayList<String> prepareCorpusIntoGram(ArrayList<String> arrayListValidate){
 
+        ArrayList<String> arrayList = new ArrayList<>();
 
         for (String s : arrayListValidate) {
             String[] wordSplit = s.split(" ");
@@ -37,8 +37,10 @@ public class Runner {
             Probabilities.PROBABILITIES_ARRAY_LIST.clear();
             System.out.println("Score = " + score + "%");
             System.out.println("----------------");
+            arrayList.add(score+"%");
         }
 
+        return arrayList;
     }
 
     public static String[] splitSentences(String text){

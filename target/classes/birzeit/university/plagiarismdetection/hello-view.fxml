@@ -14,7 +14,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="975.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="birzeit.university.plagiarismdetection.HelloController">
    <children>
       <TextArea fx:id="textArea" layoutX="55.0" layoutY="189.0" maxWidth="319.0" prefHeight="240.0" prefWidth="319.0" style="-fx-background-color: gray; -fx-border-radius: 5em;" />
-      <Text layoutX="167.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Palgrism Detection" wrappingWidth="237.34735107421875">
+      <Text layoutX="167.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Anti-Plagiarism Tool" wrappingWidth="274.94732666015625">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>
@@ -41,7 +41,7 @@
             <Image url="@plagiarism.png" />
          </image>
       </ImageView>
-      <Line endX="486.99993896484375" layoutX="488.0" layoutY="62.0" opacity="0.31" startX="-74.9000244140625" />
+      <Line endX="486.99993896484375" layoutX="488.0" layoutY="62.0" opacity="0.31" startX="-34.90008544921875" />
       <Line endX="100.0" layoutX="-42.0" layoutY="62.0" opacity="0.31" startX="42.0999755859375" />
       <TableView fx:id="table" layoutX="565.0" layoutY="189.0" prefHeight="240.0" prefWidth="319.0">
         <columns>
