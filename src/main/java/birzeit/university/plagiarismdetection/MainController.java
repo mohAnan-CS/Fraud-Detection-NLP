@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 import static birzeit.university.plagiarismdetection.Runner.*;
 
-public class HelloController implements Initializable {
+public class MainController implements Initializable {
     @FXML
     private TextArea textArea;
 
@@ -56,8 +56,15 @@ public class HelloController implements Initializable {
 
     private void fillTableView(ArrayList<String> arrayListScore){
 
-        for (int i=0 ; i < arrayListScore.size() ;i++)
-            scoreObservableList.add(new TableViewScore(String.valueOf(i), arrayListScore.get(i), "Yes"));
+        for (int i=0 ; i < arrayListScore.size() ;i++) {
+
+            if (Float.parseFloat(arrayListScore.get(i)) > 60){
+                scoreObservableList.add(new TableViewScore(String.valueOf(i), arrayListScore.get(i), "Yes"));
+            }else{
+                scoreObservableList.add(new TableViewScore(String.valueOf(i), arrayListScore.get(i), "No"));
+            }
+
+        }
 
 
         table.setItems(scoreObservableList);
