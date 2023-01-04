@@ -10,7 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import validating.StopWordRemover;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -18,6 +17,7 @@ import java.util.ResourceBundle;
 import static birzeit.university.plagiarismdetection.Runner.*;
 
 public class MainController implements Initializable {
+
     @FXML
     private TextArea textArea;
 
@@ -33,7 +33,7 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<TableViewScore, String> plagiarism;
 
-    ObservableList<TableViewScore> scoreObservableList = FXCollections.observableArrayList();
+    public ObservableList<TableViewScore> scoreObservableList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,7 +51,6 @@ public class MainController implements Initializable {
         setAllCellValues();
         fillTableView(arrayList);
 
-
     }
 
     private void fillTableView(ArrayList<String> arrayListScore){
@@ -66,7 +65,6 @@ public class MainController implements Initializable {
 
         }
 
-
         table.setItems(scoreObservableList);
 
     }
@@ -76,6 +74,7 @@ public class MainController implements Initializable {
         number.setCellValueFactory(new PropertyValueFactory<>("number"));
         score.setCellValueFactory(new PropertyValueFactory<>("score"));
         plagiarism.setCellValueFactory(new PropertyValueFactory<>("plagiarism"));
+
     }
 
 

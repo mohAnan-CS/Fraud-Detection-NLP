@@ -3,20 +3,18 @@ package validating;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class StopWordRemover {
 
-    // List of Arabic stop words
     public static ArrayList<String> STOP_WORDS_ARRAY_LIST = new ArrayList<>();
 
-    public static ArrayList<String> readStopWordsFromCSV(String fileName){
+    public static void readStopWordsFromCSV(String fileName){
 
         ArrayList<String> arrayListCorpus = new ArrayList<>();
 
         try {
+
             File file = new File(fileName.concat(".txt"));
             Scanner scanner = new Scanner(file);
             scanner.nextLine();
@@ -32,7 +30,6 @@ public class StopWordRemover {
             e.printStackTrace();
         }
 
-        return arrayListCorpus ;
     }
 
     public static String removeStopWords(String input) {

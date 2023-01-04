@@ -7,8 +7,6 @@ import java.util.regex.Pattern;
 
 public class ArabicTokenizer {
 
-    //public static int numberWordCorpus ;
-
     private static final Pattern TOKEN_PATTERN = Pattern.compile("\\p{L}+");
 
     public static List<String> tokenize(String text) {
@@ -19,22 +17,6 @@ public class ArabicTokenizer {
         }
         return tokens;
     }
-
-    public static ArrayList<List<String>> tokenAllLines(String[] array){
-
-        ArrayList<List<String>> arrayListCorpus = new ArrayList<>();
-
-        for (String s : array) {
-
-            List<String> token = tokenize(s);
-            arrayListCorpus.add(token);
-
-        }
-
-        return arrayListCorpus;
-
-    }
-
 
 }
 

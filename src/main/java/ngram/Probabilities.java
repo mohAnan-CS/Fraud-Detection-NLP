@@ -1,9 +1,6 @@
 package ngram;
 
 import birzeit.university.plagiarismdetection.Runner;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class Probabilities {
