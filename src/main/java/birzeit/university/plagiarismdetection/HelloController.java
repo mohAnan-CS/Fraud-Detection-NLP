@@ -1,23 +1,29 @@
 package birzeit.university.plagiarismdetection;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import ngram.Model;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    private TextArea textArea;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private TableView<?> table;
+
+    @FXML
+    private TableColumn<?, ?> number;
+
+    @FXML
+    private TableColumn<?, ?> score;
+
+    @FXML
+    private TableColumn<?, ?> plagiarism;
+
+    @FXML
+    void btnGoOnAction() {
+        System.out.println("hello");
     }
 
 }

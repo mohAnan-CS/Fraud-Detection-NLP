@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="birzeit.university.plagiarismdetection.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="975.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="birzeit.university.plagiarismdetection.HelloController">
+   <children>
+      <TextArea fx:id="textArea" layoutX="55.0" layoutY="189.0" maxWidth="319.0" prefHeight="240.0" prefWidth="319.0" style="-fx-background-color: gray; -fx-border-radius: 5em;" />
+      <Text layoutX="167.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Palgrism Detection" wrappingWidth="237.34735107421875">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Text>
+      <Line endX="-21.999969482421875" endY="271.2928771972656" layoutX="482.0" layoutY="233.0" startX="-22.0" startY="-87.47460174560547" stroke="#b9b4b4" />
+      <Button layoutX="188.0" layoutY="455.0" mnemonicParsing="false" onAction="#btnGoOnAction" prefHeight="37.0" prefWidth="54.0" style="-fx-background-radius: 5em; -fx-background-color: green; -fx-background-radius: black; -fx-background-radius: 5em;" text="Go">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="70.0" fitWidth="133.0" layoutX="836.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@birzeit.png" />
+         </image>
+      </ImageView>
+      <Line endX="171.00006103515625" endY="3.0517578125E-5" layoutX="804.0" layoutY="544.0" startX="-804.0" startY="3.0517578125E-5" stroke="#bcb8b8" />
+      <Text layoutX="23.0" layoutY="586.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birzeit Univeversity - Prof Mustaffa Jarrar - ARTIFICIAL INTELLIGENCE - MOHAMMAD ABO JAZAR" wrappingWidth="702.3491821289062">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="99.0" fitWidth="150.0" layoutX="55.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 80%;">
+         <image>
+            <Image url="@plagiarism.png" />
+         </image>
+      </ImageView>
+      <Line endX="486.99993896484375" layoutX="488.0" layoutY="62.0" opacity="0.31" startX="-74.9000244140625" />
+      <Line endX="100.0" layoutX="-42.0" layoutY="62.0" opacity="0.31" startX="42.0999755859375" />
+      <TableView fx:id="table" layoutX="565.0" layoutY="189.0" prefHeight="240.0" prefWidth="319.0">
+        <columns>
+          <TableColumn fx:id="number" prefWidth="112.0" text="Number Sentence" />
+          <TableColumn fx:id="score" prefWidth="113.59991455078125" text=" Palgrism Score" />
+            <TableColumn fx:id="plagiarism" prefWidth="92.80003662109374" text="Is Palgrism ?" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
